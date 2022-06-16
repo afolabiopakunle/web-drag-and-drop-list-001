@@ -40,4 +40,42 @@ function createList() {
     listItemsArray.push(LI);
     mainList.appendChild(LI)
   });
+
+  addEventListerners();
+}
+
+function addEventListerners() {
+  const draggables = document.querySelectorAll('.dragable');
+  const dragListItems = document.querySelectorAll('.dragable-list');
+  draggables.forEach((dragable) => {
+    dragable.addEventListener('dragstart', dragStart)
+  })
+
+  dragListItems.forEach(item => {
+    item.addEventListener('dragover', dragOver);
+    item.addEventListener('drop', dragDrop);
+    item.addEventListener('dragenter', dragEnter);
+    item.addEventListener('dragleave', dragLeave);
+  })
+}
+
+
+function dragStart() {
+  console.log('EVENT: ', 'dragstart')
+}
+
+function dragDrop() {
+  console.log('EVENT: ', 'dragdrop')
+}
+
+function dragEnter() {
+  console.log('EVENT: ', 'dragstart')
+}
+
+function dragLeave() {
+  console.log('EVENT: ', 'dragleave')
+}
+
+function dragOver() {
+  console.log('EVENT: ', 'dragover')
 }
