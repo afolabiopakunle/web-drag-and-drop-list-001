@@ -13,7 +13,12 @@ const richestPeople = [
   'Mark Zuckerberg',
   'Michael Bloomberg',
   'Larry Page',
+  'Tunde Disu'
 ];
+
+const listItems = [];
+
+let dragStartIndex;
 
 createList();
 
@@ -23,7 +28,10 @@ function createList() {
     LI.setAttribute('data-index', index);
     LI.innerHTML = `
     <span class="number">${index + 1}</span>
-    <div>${person}</div>
+    <div class="dragable" draggable="true">
+    <p class="person-name">${person}</p>
+    <i class="fas fa-grip-lines"></i>
+    </div>
     `;
 
     mainList.appendChild(LI);
