@@ -16,7 +16,7 @@ const richestPeople = [
   'Tunde Disu'
 ];
 
-const listItems = [];
+const listItemsArray = [];
 
 let dragStartIndex;
 
@@ -34,6 +34,7 @@ function createList() {
     </div>
     `;
 
-    mainList.appendChild(LI);
+    listItemsArray.push(LI);
+    mainList.appendChild(LI)
   });
 }
