@@ -23,13 +23,16 @@ let dragStartIndex;
 createList();
 
 function createList() {
-  [...richestPeople].forEach((person, index) => {
+  [...richestPeople]
+  .map(a => ({value: a, sort: Math.random()}))
+  .sort((a, b) => a.sort - b.sort)
+  .forEach((person, index) => {
     let LI = document.createElement('li');
     LI.setAttribute('data-index', index);
     LI.innerHTML = `
     <span class="number">${index + 1}</span>
     <div class="dragable" draggable="true">
-    <p class="person-name">${person}</p>
+    <p class="person-name">${person.value}</p>
     <i class="fas fa-grip-lines"></i>
     </div>
     `;
